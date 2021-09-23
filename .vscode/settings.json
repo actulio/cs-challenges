@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "todohighlight.keywords": [
+    "NOTE:",
+    {
+      "text": "NOTE:",
+      "color": "#ffffff",
+      "backgroundColor": "#0080ff",
+      "overviewRulerColor": "grey"
+    }
+  ],
+  "explorer.compactFolders": false
+}
