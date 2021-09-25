@@ -1,0 +1,5 @@
+{
+  "key": "alt+x",
+  "command": "workbench.action.tasks.runTask",
+  "args": "Run nodejs"
+}
