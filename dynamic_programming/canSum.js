@@ -31,3 +31,17 @@ const canSum_memoized = (targetSum, arr, memo = {}) => {
   memo[targetSum] = false;
   return false;
 };
+
+const canSum_tabulated = (targetSum, arr) => {
+  const table = Array(targetSum).fill(false);
+  table[0] = true; // trivial case
+
+  for (let i = 0; i < targetSum; i++) {
+    if (table[i]) {
+      for (let num of arr) {
+        table[i + num] = true;
+      }
+    }
+  }
+  return table[targetSum];
+};

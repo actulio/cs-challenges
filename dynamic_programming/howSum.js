@@ -35,3 +35,19 @@ const howSum_memoized = (targetSum, arr, memo = {}) => {
   memo[targetSum] = null;
   return null;
 };
+
+const howSum_tabulated = (targetSum, arr) => {
+  const table = Array(targetSum + 1).fill(null);
+  table[0] = [];
+
+  for (let i = 0; i < targetSum; i++) {
+    if (table[i]) {
+      for (let num of arr) {
+        table[i + num] = [...table[i], num];
+      }
+    }
+  }
+  return table[targetSum];
+};
+
+console.log(howSum_tabulated(7, [5, 3, 4, 7]));

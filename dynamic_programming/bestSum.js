@@ -48,4 +48,21 @@ const bestSum_memoized = (targetSum, arr, memo = {}) => {
   return shortest;
 };
 
-console.log(bestSum_memoized(100, [1, 2, 5, 25]));
+const bestSum_tabulated = (targetSum, arr) => {
+  const table = Array(targetSum + 1).fill(null);
+  table[0] = [];
+
+  for (let i = 0; i <= targetSum; i++) {
+    if (table[i]) {
+      for (let num of arr) {
+        const candidate = [...table[i], num];
+        if (!table[i + num] || table[i + num].length > candidate.length) {
+          table[i + num] = candidate;
+        }
+      }
+    }
+  }
+  return table[targetSum];
+};
+
+console.log(bestSum_tabulated(100, [1, 2, 5, 25]));
