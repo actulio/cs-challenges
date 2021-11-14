@@ -1,7 +1,7 @@
 /**
  * @description Calculate if positive numbers inside given array can sum to targetSum
- * @param  {} targetSum
- * @param  {} arr
+ * @param  {string} targetSum
+ * @param  {string[]} arr
  */
 const canSum = (targetSum, arr) => {
   // (m, n = arr.length) => O(n^m)

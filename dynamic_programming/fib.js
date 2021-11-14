@@ -1,6 +1,6 @@
 /**
- * @param  {} n
  * @description Common recursive Fibonacci function
+ * @param  {number} n
  */
 const fib_recursive = (n) => {
   if (n <= 2) return 1;

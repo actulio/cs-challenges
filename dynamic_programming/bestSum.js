@@ -1,7 +1,7 @@
 /**
  * @description Returns an array containing the shortest combination of numbers that add up exactly to targetSum
- * @param  {} targetSum
- * @param  {} arr
+ * @param  {number} targetSum
+ * @param  {number[]} arr
  */
 const bestSum = (targetSum, arr) => {
   // (m, n = arr.length), time O(n^m * m) branching factor * height of tree * sizeOfArray

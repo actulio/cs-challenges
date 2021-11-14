@@ -1,7 +1,7 @@
 /**
  * @description Returns an array containing any combination of elements that add up exactly to targetSum
- * @param  {} targetSum
- * @param  {} arr
+ * @param  {number} targetSum
+ * @param  {number[]} arr
  */
 const howSum = (targetSum, arr) => {
   // (m, n = arr.length) => O(n^m * m) times m because of the linear array copy
