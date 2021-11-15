@@ -35,3 +35,24 @@ const canConstruct_memoized = (target, wordBank, memo = {}) => {
   memo[target] = false;
   return false;
 };
+
+const canConstruct_tabulated = (target, wordBank) => {
+  const table = Array(target.length + 1).fill(false);
+  table[0] = true; // the empty string can always be generated
+
+  for (let i = 0; i <= target.length; i++) {
+    if (!table[i]) continue;
+
+    for (let word of wordBank) {
+      // if the word matches the characters starting at position "i"
+      if (target.slice(i, i + word.length) === word) {
+        table[i + word.length] = true;
+      }
+    }
+  }
+  return table[target.length];
+};
+
+console.log(
+  canConstruct_tabulated("abcdef", ["ab", "abc", "cd", "def", "abcd"])
+);

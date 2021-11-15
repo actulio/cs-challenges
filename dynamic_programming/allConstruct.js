@@ -19,3 +19,24 @@ const allConstruct = (target, wordBank) => {
 
   return result;
 };
+
+const allConstruct_tabulated = (target, wordBank) => {
+  const table = Array(target.length + 1)
+    .fill()
+    .map(() => []);
+  table[0] = [[]];
+
+  for (let i = 0; i <= target.length; i++) {
+    for (let word of wordBank) {
+      if (target.slice(i, i + word.length) === word) {
+        const newCandidate = table[i].map((subArr) => [...subArr, word]);
+        table[i + word.length].push(...newCandidate);
+      }
+    }
+  }
+  return table[target.length];
+};
+
+console.log(
+  allConstruct_tabulated("abcdef", ["ab", "abc", "cd", "def", "abcd"])
+);
